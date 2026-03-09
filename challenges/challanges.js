@@ -1,3 +1,4 @@
+// const { useCallback } = require("react");
 
 /*
 Mark and John are trying to compare their BMI (Body Mass Index), which is 
@@ -182,6 +183,105 @@ if (mark.bmi > john.bmi) {
     console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`)
 
 }
+
+
+console.log('--------challenge 4 -----');
+
+/*
+Your tasks: 
+1. Create an array 'bills' containing all 10 test bill values 
+2. Create empty arrays for the tips and the totals ('tips' and 'totals') 
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate 
+tips and total values (bill + tip) for every bill value in the bills array. Use a for 
+loop to perform the 10 calculations! 
+Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52 
+Hints: Call ‘calcTip ‘in the loop and use the push method to add values to the 
+tips and totals arrays 
+
+*/
+const calArrayTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bill.length; i++) {
+    const tip = calArrayTip(bill[i]);
+    tips.push(tip);
+    totals.push(tip + bill[i]);
+}
+
+console.log(bill, tips, totals);
+
+console.log('--------------bonus----------------');
+
+const calcArrayAvg = function (arr) {
+
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+
+
+}
+console.log(calcArrayAvg([2, 3, 7]));
+console.log(calcArrayAvg[total]);
+
+/*
+
+dev skill code challenge 1:
+
+Given an array of forecasted maximum temperatures, the thermometer displays a
+string with the given temperatures. Example: [17, 21, 23] will print "... 17ºC in 1
+days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+Your tasks:
+1. Create a function 'printForecast' which takes in an array 'arr' and logs a
+string like the above to the console. Try it with both test datasets.
+2. Use the problem-solving framework: Understand the problem and break it up
+into sub-problems!
+Test data:
+§ Data 1: [17, 21, 23]
+§ Data 2: [12, 5, -5, 0, 4]
+
+*/
+
+//array transformed to string separated by dots
+// what is the x days? -> its current index of array +1
+// transform each element to string with Celsius
+// string needday i.e index+1
+
+
+
+
+
+let data1 = [17, 21, 23];
+let data2 = [12, -5, -5, 0, 4];
+
+let printForecast = function (arr) {
+
+    let str = '';
+
+    for (let i = 0; i < arr.length; i++) {
+
+        str = str + `${arr[i]} degree Celsius in ${i + 1} days... `
+    }
+    console.log('...' + str);
+}
+
+printForecast(data1, data2);
+
+
+
+
+
+
+
+
+
+
 
 
 
